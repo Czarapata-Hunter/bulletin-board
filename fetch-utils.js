@@ -28,3 +28,27 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function createBulletin(bulletin) {
+    return await client.from('bulletins').insert(bulletin).single();
+}
+
+//Storage Functions
+
+export async function uploadImage(bucketName, imagePath, imageFile) {
+    const bucket = client.storage.from(bucketName);
+
+    const response = await bucket.upload(imagePath, imageFile, {
+        cacheControl: '3600',
+        upsert: true,
+    });
+
+    if (response.error) {
+        // console.log(response.error);
+        return null;
+    }
+
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.key}`;
+
+    return url;
+}

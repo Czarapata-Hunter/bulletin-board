@@ -6,7 +6,7 @@
     border-radius: 5px;
 
     width: 400px;
-    height: 400px;
+    height: 600px;
 
     font-size: 24px;
 
@@ -17,6 +17,11 @@
     color: rgb(255, 145, 0);
     letter-spacing: 4px;
     background: white;
+}
+
+form img {
+    width: 100px;
+    height: 100px;
 }
 
 textarea {
