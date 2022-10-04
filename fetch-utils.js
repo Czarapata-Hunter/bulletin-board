@@ -33,6 +33,11 @@ export async function createBulletin(bulletin) {
     return await client.from('bulletins').insert(bulletin).single();
 }
 
+export async function getBulletins() {
+    let query = client.from('bulletins').select('*').limit(100);
+    return await query;
+}
+
 //Storage Functions
 
 export async function uploadImage(bucketName, imagePath, imageFile) {
@@ -48,7 +53,7 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
         return null;
     }
 
-    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.key}`;
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
 
     return url;
 }

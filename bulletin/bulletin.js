@@ -32,8 +32,7 @@ postBulletin.addEventListener('submit', async (e) => {
     const randomFolder = Math.floor(Date.now() * Math.random());
     const imagePath = `bulletins/${randomFolder}/${imageFile.name}`;
 
-    const url = await uploadImage('images', imagePath, imageFile);
-
+    const url = await uploadImage('avatars', imagePath, imageFile);
     const bulletin = {
         title: formData.get('title'),
         description: formData.get('description'),
