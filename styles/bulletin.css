@@ -1,0 +1,65 @@
+.bulletin-form {
+    align-items: center;
+    align-content: center;
+    border: 2px;
+    border-style: solid;
+    border-radius: 5px;
+
+    width: 400px;
+    height: 400px;
+
+    font-size: 24px;
+
+    text-align: center;
+    padding: 20px;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 145, 0);
+    letter-spacing: 4px;
+    background: white;
+}
+
+textarea {
+    width: 95%;
+    height: 95%;
+    background: grey;
+}
+
+input {
+    width: 95%;
+    background: grey;
+}
+
+main {
+    align-items: center;
+    text-align: center;
+
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label,
+input {
+    display: block;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+select {
+    background: grey;
+}
+
+button {
+    background: rgb(255, 145, 0);
+}
+
+.page-header {
+    background: rgb(255, 145, 0);
+}
+
+body {
+    background: black;
+}
