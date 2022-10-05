@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Create Bulletin</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="bulletin.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/bulletin.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <p class="title">Halloween Create Bulletin</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="bulletin-form">
+                <form id="post-bulletin">
+                    <label>
+                        <div>Title</div>
+                        <input name="title" required placeholder="Post Title..." />
+                    </label>
+
+                    <label>
+                        <div>Category</div>
+                        <select
+                            id="choose-category"
+                            name="choose-category"
+                            placeholder="Please choose a Category..."
+                            required
+                        >
+                            <option value="food-drink">Food & Drink 🍻</option>
+                            <option value="entertainment">Entertainment 🎶</option>
+                            <option value="neighborhood">Neighborhood 🏠</option>
+                            <option value="lessons">Lessons 👩‍🏫</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <div>Description</div>
+                        <textarea
+                            name="description"
+                            required
+                            placeholder="Describe the purpose of this post..."
+                        ></textarea>
+                    </label>
+
+                    <label>
+                        <div>Contact</div>
+                        <input name="contact" placeholder="How to get ahold of you..." />
+                    </label>
+
+                    <label>
+                        <div>Photo</div>
+                        <input
+                            id="image-input"
+                            name="image"
+                            type="file"
+                            required
+                            placeholder="upload an image..."
+                        />
+                    </label>
+                    <img
+                        id="preview"
+                        class="preview"
+                        alt="avatar preview"
+                        src="../assets/placeholder.png"
+                    />
+
+                    <button>Post Bulletin</button>
+
+                    <p id="error-display" class="error-display"></p>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
